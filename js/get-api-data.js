@@ -23,7 +23,9 @@ function updateMusicData() {
             window.location.href =  'https://www.last.fm/user/fade_awway'; 
           }); 
         } else { 
-          document.getElementById('track-cover').src = ''; 
+          document.getElementById('track-cover').src = '';
+          document.getElementById('track-cover').style.width = '0px';
+          document.getElementById('track-cover').style.height = '0px';
           document.getElementById('track-name').innerText = 'More music'; 
           document.getElementById('track-author').innerText = "All the tracks I've listened to"; 
           document.getElementById("audioGif").querySelector("img").src = "https://i.ibb.co/wBtqcq0/inactive.png";
@@ -34,7 +36,9 @@ function updateMusicData() {
       }) 
       .catch(error => { 
         console.error('Error:', error);
-        document.getElementById('track-cover').src = ''; 
+        document.getElementById('track-cover').src = '';
+        document.getElementById('track-cover').style.width = '0px';
+        document.getElementById('track-cover').style.height = '0px';
         document.getElementById('track-name').innerText = 'More music'; 
         document.getElementById('track-author').innerText = "All the tracks I've listened to"; 
         document.getElementById("audioGif").querySelector("img").src = "https://i.ibb.co/wBtqcq0/inactive.png";
