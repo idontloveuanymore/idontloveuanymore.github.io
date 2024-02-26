@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght<weight>&display=swap');
+
+/* 320 - 768 */
+/* 768 - 992 */
+/* 992+ */
+
+@media (max-height: 667px) {
+    .small-image-tg {
+        display: none;
+    }
+    .small-image-info {
+        display: none;
+    }
+    .sociality p {
+        margin: 10px !important;
+        font-size: 38pt !important;
+    }
+}
+
+@media (max-height: 450px) {
+    .small-image-tg {
+        display: none;
+    }
+    .small-image-info {
+        display: none;
+    }
+    .sociality p {
+        margin: 5px !important;
+        font-size: 24pt !important;
+    }
+}
+
+@media (max-width: 992px) {
+    #track-cover {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #track-cover {
+        display: none;
+    }
+
+    .audio-playing-gif img {
+        display: none;
+    }
+
+    .sociality {
+        left: 50% !important;
+    }
+
+}
+
+@media (max-width: 667px) {
+    .text-info {
+        display: none !important;
+    }
+    #track-cover {
+        display: flex !important;
+    }
+    .audio-playing-gif img {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 568px) {
+    .text-info {
+        display: none !important;
+    }
+    #track-cover {
+        display: flex !important;
+    }
+    .audio-playing-gif img {
+        display: none !important;
+    }
+
+    html.light {
+        --slope: rotate(0deg) !important;
+        --particles-width: 50% !important;
+    }
+}
+
+@media (max-width: 370px) {
+    .sociality p {
+        margin: 10px !important;
+        font-size: 38pt !important;
+    }
+}
+    
+html.light {
+    --bg-color: #dcdcdc;
+    --text-color: black;
+    --main-color: white;
+    --telegram-logo: url('https://i.ibb.co/88zWbDV/telegram-logo-light.png');
+    --info-logo: url('https://i.ibb.co/prcRPmr/info-logo-light.png');
+    --bg-img: url('https://i.pinimg.com/originals/df/eb/0a/dfeb0aa8361199982c050bf08924a9b2.jpg') center/cover;
+    --slope: rotate(-70deg);
+    --particles-width: 30%;
+}
+
+html.dark {
+    --bg-color: black;
+    --main-color: #0f0f0f;
+    --text-color: white;
+    --telegram-logo: url('https://i.ibb.co/KsKXRJp/telegram-logo-dark.png');
+    --info-logo: url('https://i.ibb.co/30MQYTV/info-logo-dark.png');
+    --bg-img: url('https://i.pinimg.com/originals/05/60/2f/05602f4b3cf0f32d2bcddd9f827a3083.jpg') center/cover;
+    --slope: rotate(0deg);
+    --particles-width: 100%;
+}
+
+.small-image-tg {
+    margin-top: -15px;  
+    padding: 15px;
+    margin-right: 15px;
+    max-height: 30px;
+    max-width: 30px;
+    background-image: var(--telegram-logo);
+    background-size: cover;
+}
+
+.small-image-info {
+    margin-top: -15px;
+    padding: 15px;
+    max-height: 30px;
+    max-width: 30px;
+    background-image: var(--info-logo);
+    background-size: cover;
+}
+
+/* Music bar */
+.music-bar {
+    height: 70px;
+    position: fixed;
+    color: var(--text-color);
+    z-index: 1001;
+    width: 35%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.track-info {
+    font-family: 'Montserrat';
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+.audio-playing-gif img {
+    padding-left: 10px;
+    padding-top: 15px;
+    width: 25px;
+    height: 25px;
+}
+
+.text-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.track-name {
+    font-family: 'Montserrat';
+    font-weight: 300;   
+    margin: 0;
+    margin-left: 5px;
+}
+
+.track-author {
+    margin-bottom: 0;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+/* Header */
+.header-container {
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    display: flex;
+    background-color: var(--bg-color);
+    justify-content: center;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.theme-switch-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 9999999999;
+}
+
+#switch {
+    width: 30px;
+    height: 30px;
+}
+
+/* Text */
+
+.header-text {
+    color: var(--text-color);
+    text-align: center;
+    margin: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.online-status {
+    width: 7px;
+    height: 7px;
+    margin-top: 5px;
+    border-radius: 50%;
+    border: 2px solid var(--text-color);
+}
+
+.bottom-container {
+    background-color: var(--bg-color);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* border-top: 1px solid #ccc; */
+}
+
+.bottom-text {
+    color: var(--text-color);
+    font-size: 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+
+/* Background */
+
+body {
+    background-color: var(--main-color);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    z-index: -1;
+    background: var(--bg-img);
+    will-change: transform;
+}
+
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--particles-width);
+    height: 100%;
+    pointer-events: none;
+    transform: var(--slope)
+}
+
+.particle {
+    position: absolute;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    animation-timing-function: linear;
+}
+
+@keyframes fall {
+    to {
+        transform: translateX(100vw) translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Main */
+
+.sociality {
+    font-family: 'Montserrat';
+    font-weight: 200;
+    width: 350px;
+    display: flex;
+    color: var(--text-color);
+    flex-direction: column;
+    text-align: center;
+    z-index: 900000;
+
+    position: absolute;
+    left: 70%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sociality p {
+    margin: 15px;
+    font-size: 52pt;
+}
+
+/* Running line */
+
+.running-line {
+    font-family: 'Montserrat';
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 50px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    writing-mode: vertical-lr;
+    color: var(--text-color);
+    font-size: 21px;
+}
+
+.running-line span {
+    margin: 10px 0;
+    animation: runningLine 7s linear infinite;
+    white-space: nowrap;
+}
+
+@keyframes runningLine {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}

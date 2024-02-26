@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fade.awway</title>
+    <link rel="icon" type="image/x-icon" href="img/moon.png">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/theme-switch.js" defer></script>
+</head>
+<body>
+<head>
+    <div class="music-bar">
+        <img id="track-cover" src="" alt="">
+        <div class="track-info">
+            <div class="text-info">
+                <h2 id="track-name" class="track-name"></h2>
+                <p id="track-author" class="track-author"></p>
+            </div>
+            <div class="audio-playing-gif" id="audioGif">
+                <img src="https://i.ibb.co/wBtqcq0/inactive.png"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-container">
+        <h1 id="fade-away" class="header-text">fade.awway</h1>
+        <div class="online-status"></div>
+    </div>
+
+    <div class="theme-switch-button" onclick="toggleTheme()">
+        <img id="switch" src="img/moon.png" alt="Toggle Theme">
+        <script>
+            window.lightThemeImage = "img/sun.png";
+            window.darkThemeImage = "img/moon.png";
+        </script>
+    </div>
+
+</head>
+<main>
+
+    <body>
+        <div class="running-line" oncopy="return false;" style="-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">
+            <span class="text1">Bastards!</span>
+            <span class="text2">Jesus, they killed Kenny!</span>
+        </div>
+    
+        <div class="sociality">
+            <p id="YouTube_link"> YouTube </p>
+            <p id="YT-Music_link"> YT Music </p>
+            <p id="Telegram_link"> Telegram </p>
+            <p id="GitHub_link"> GitHub </p>
+        </div>
+    
+        <div class="particles-container" id="particles-container"></div>
+        <div class="background"></div>
+        
+        <script src="js/particles.js"></script>
+        <script src="js/background-movement.js"></script>
+    
+    </body>
+
+</main>
+
+<footer>
+    <div class="bottom-container">
+        <h1 class="bottom-text">I don't love you anymore</h1>
+        <a href="http://t.me/i_dont_love_u_anymore"><img class="small-image-tg"></a>
+        <a href="https://github.com/idontloveuanymore"><img class="small-image-info"></a>
+    </div>
+</footer>
+
+<script src="js/text-coloration.js"></script>
+<script src="js/get-api-data.js"></script>
+
+</body>
+</html>
+
