@@ -1,15 +1,32 @@
-document.getElementById('fade-away').addEventListener('mouseover', function() {
-    this.style.color = '#c10015';
-    this.style.cursor = 'pointer';
-});
+// links
+const youtubeMusicLink = 'https://music.youtube.com/channel/UC0Ct3r-egm0HyVeCWuhnrew?si=SUaxfebHmeU3pbrd';
+const youtubeChannelLink = 'https://www.youtube.com/@idontloveuanymore';
+const githubPageLink = 'https://github.com/idontloveuanymore';
+const telegramDMLink = 'http://t.me/idontloveuanymore';
+const fadeawwayLink = ""
 
-document.getElementById('fade-away').addEventListener('mouseout', function() {
-    this.style.color = '';
-});
+function handleLink(id, color, href) {
+    var link = document.getElementById(id);
 
-document.getElementById('fade-away').addEventListener('click', function() {
-    window.location.href = 'https://www.twitch.tv/';
-});
+    link.addEventListener('mouseover', function() {
+        this.style.color = color;
+        this.style.cursor = 'pointer';
+    });
+
+    link.addEventListener('mouseout', function() {
+        this.style.color = '';
+    });
+
+    link.addEventListener('click', function() {
+        window.location.href = href;
+    });
+}
+
+handleLink('YouTube_link', '#c10015', youtubeChannelLink);
+handleLink('YT-Music_link', '#c10015', youtubeMusicLink);
+handleLink('Telegram_link', '#c10015', telegramDMLink);
+handleLink('GitHub_link', '#c10015', githubPageLink);
+handleLink('fade-away', '#c10015', fadeawwayLink);
 
 document.getElementById('track-name').addEventListener('mouseover', function() {
     this.style.color = '#c10015';
@@ -19,65 +36,3 @@ document.getElementById('track-name').addEventListener('mouseover', function() {
 document.getElementById('track-name').addEventListener('mouseout', function() {
     this.style.color = '';
 });
-
-// qq
-
-document.getElementById('YouTube_link').addEventListener('mouseover', function() {
-    this.style.color = '#c10015';
-    this.style.cursor = 'pointer';
-});
-
-document.getElementById('YouTube_link').addEventListener('mouseout', function() {
-    this.style.color = '';
-});
-
-document.getElementById('YouTube_link').addEventListener('click', function() {
-    window.location.href = 'https://youtube.com/@fadeAwway?si=MJ4AzCnb50FGpVcd';
-});
-
-
-
-document.getElementById('YT-Music_link').addEventListener('mouseover', function() {
-    this.style.color = '#c10015';
-    this.style.cursor = 'pointer';
-});
-
-document.getElementById('YT-Music_link').addEventListener('mouseout', function() {
-    this.style.color = '';
-});
-
-document.getElementById('YT-Music_link').addEventListener('click', function() {
-    window.location.href = 'https://music.youtube.com/channel/UC0Ct3r-egm0HyVeCWuhnrew?si=SUaxfebHmeU3pbrd';
-});
-
-
-
-document.getElementById('Telegram_link').addEventListener('mouseover', function() {
-    this.style.color = '#c10015';
-    this.style.cursor = 'pointer';
-});
-
-document.getElementById('Telegram_link').addEventListener('mouseout', function() {
-    this.style.color = '';
-});
-
-document.getElementById('Telegram_link').addEventListener('click', function() {
-    window.location.href = 'http://t.me/i_dont_love_u_anymore';
-});
-
-
-
-document.getElementById('GitHub_link').addEventListener('mouseover', function() {
-    this.style.color = '#c10015';
-    this.style.cursor = 'pointer';
-});
-
-document.getElementById('GitHub_link').addEventListener('mouseout', function() {
-    this.style.color = '';
-});
-
-document.getElementById('GitHub_link').addEventListener('click', function() {
-    window.location.href = 'https://github.com/idontloveuanymore';
-});
-
-

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* 320 - 768 */
 /* 768 - 992 */
@@ -11,44 +11,12 @@
     .small-image-info {
         display: none;
     }
-    .sociality p {
-        margin: 10px !important;
-        font-size: 38pt !important;
-    }
-}
-
-@media (max-height: 450px) {
-    .small-image-tg {
-        display: none;
-    }
-    .small-image-info {
-        display: none;
-    }
-    .sociality p {
-        margin: 5px !important;
-        font-size: 24pt !important;
-    }
 }
 
 @media (max-width: 992px) {
     #track-cover {
         display: none;
     }
-}
-
-@media (max-width: 768px) {
-    #track-cover {
-        display: none;
-    }
-
-    .audio-playing-gif img {
-        display: none;
-    }
-
-    .sociality {
-        left: 50% !important;
-    }
-
 }
 
 @media (max-width: 667px) {
@@ -80,19 +48,27 @@
     }
 }
 
-@media (max-width: 370px) {
-    .sociality p {
-        margin: 10px !important;
-        font-size: 38pt !important;
-    }
+
+:root {
+    /* z-index */
+
+    /* header - 4*/
+    /* main - 1*/
+    /* bottom - 4*/
+    /* elements - 7 */
+    --main-z-index: 1;
+    --background-z-index: -1;
+    --header-z-index: 4;
+    --bottom-z-index: 4;
+    --elements-z-index: 7;
 }
-    
+
 html.light {
     --bg-color: #dcdcdc;
     --text-color: black;
     --main-color: white;
-    --telegram-logo: url('https://i.ibb.co/88zWbDV/telegram-logo-light.png');
-    --info-logo: url('https://i.ibb.co/prcRPmr/info-logo-light.png');
+    --telegram-logo: url('../img/telegram-logo-light.png');
+    --info-logo: url('../img/info-logo-light.png');
     --bg-img: url('https://i.pinimg.com/originals/df/eb/0a/dfeb0aa8361199982c050bf08924a9b2.jpg') center/cover;
     --slope: rotate(-70deg);
     --particles-width: 30%;
@@ -102,14 +78,15 @@ html.dark {
     --bg-color: black;
     --main-color: #0f0f0f;
     --text-color: white;
-    --telegram-logo: url('https://i.ibb.co/KsKXRJp/telegram-logo-dark.png');
-    --info-logo: url('https://i.ibb.co/30MQYTV/info-logo-dark.png');
+    --telegram-logo: url('../img/telegram-logo-dark.png');
+    --info-logo: url('../img/info-logo-dark.png');
     --bg-img: url('https://i.pinimg.com/originals/05/60/2f/05602f4b3cf0f32d2bcddd9f827a3083.jpg') center/cover;
     --slope: rotate(0deg);
     --particles-width: 100%;
 }
 
 .small-image-tg {
+    z-index: var(--elements-z-index);
     margin-top: -15px;  
     padding: 15px;
     margin-right: 15px;
@@ -130,11 +107,11 @@ html.dark {
 
 /* Music bar */
 .music-bar {
-    height: 70px;
+    max-height: 70px;
     position: fixed;
     color: var(--text-color);
-    z-index: 1001;
-    width: 35%;
+    max-width: 35%;
+    z-index: var(--elements-z-index);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -143,6 +120,7 @@ html.dark {
 .track-info {
     font-family: 'Montserrat';
     font-weight: 300;
+    /* margin-top: 5px; */
     display: flex;
     align-items: center;
 }
@@ -177,20 +155,21 @@ html.dark {
     position: fixed;
     text-align: center;
     top: 0;
+    z-index: var(--header-z-index);
+    width: 70px;
     width: 100%;
     display: flex;
     background-color: var(--bg-color);
     justify-content: center;
     padding: 10px;
-    z-index: 1000;
 }
 
 .theme-switch-button {
     position: fixed;
+    z-index: var(--elements-z-index);
     top: 20px;
     right: 20px;
     cursor: pointer;
-    z-index: 9999999999;
 }
 
 #switch {
@@ -206,14 +185,6 @@ html.dark {
     margin: 5px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-}
-
-.online-status {
-    width: 7px;
-    height: 7px;
-    margin-top: 5px;
-    border-radius: 50%;
-    border: 2px solid var(--text-color);
 }
 
 .bottom-container {
@@ -232,25 +203,30 @@ html.dark {
     font-weight: 400;
 }
 
-
 /* Background */
 
 body {
     background-color: var(--main-color);
     margin: 0;
+    z-index: var(--main-z-index);
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh; /* Use viewport height instead of percentage */
+    width: 100%;
     overflow: hidden;
     position: relative;
 }
 
 .background {
     position: absolute;
-    width: 110%;
-    height: 110%;
-    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--background-z-index);
     background: var(--bg-img);
+    background-size: cover;
+    background-position: center;
     will-change: transform;
 }
 
@@ -281,24 +257,37 @@ body {
 /* Main */
 
 .sociality {
-    font-family: 'Montserrat';
-    font-weight: 200;
-    width: 350px;
+    z-index: var(--elements-z-index); 
     display: flex;
-    color: var(--text-color);
-    flex-direction: column;
-    text-align: center;
-    z-index: 900000;
-
-    position: absolute;
-    left: 70%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This will make the container take up the full height of the viewport */
+    flex-direction: column; /* This will stack the children vertically */
 }
 
 .sociality p {
+    width: 350px;
+    color: var(--text-color);
+    font-family: 'Montserrat';
+    text-align: center;
+    font-weight: 200;
     margin: 15px;
     font-size: 52pt;
+    transform: translateX(80%);
+}
+
+@media (max-width: 767px) or (max-height: 600px){
+    .sociality p {
+        transform: translateX(0);
+    }
+
+    #track-cover {
+        display: none;
+    }
+
+    .audio-playing-gif img {
+        display: none;
+    }
 }
 
 /* Running line */
@@ -309,7 +298,7 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
-    height: 100vh;
+    height: 100%;
     width: 50px;
     overflow: hidden;
     display: flex;
