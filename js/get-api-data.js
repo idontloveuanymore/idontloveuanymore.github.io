@@ -3,7 +3,6 @@ const lastfmProfile = 'https://www.last.fm/user/fade_awway';
 const lastfmaApi = 'https://idontloveuanymore-lastfm-api.vercel.app/';
 
 function updateTrackInfo(data) {
-  document.getElementById('track-name').style.paddingTop = "0px";
   document.getElementById('track-cover').src = data.image_url;
   document.getElementById('track-cover').style.display = "flex";
   document.getElementById('track-name').innerText = data.track_name;
@@ -16,7 +15,6 @@ function updateTrackInfo(data) {
 
 function updateInactiveState() {
   document.getElementById('track-cover').style.display = "none";
-  document.getElementById('track-name').style.paddingTop = "5px";
   document.getElementById('track-name').innerText = 'More music';
   document.getElementById('track-author').innerText = "All the tracks I've listened to";
   document.getElementById("audioGif").querySelector("img").style.display = "none";
