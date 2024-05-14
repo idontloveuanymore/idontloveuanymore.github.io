@@ -108,6 +108,7 @@ html.dark {
 /* Music bar */
 .music-bar {
     max-height: 70px;
+    min-height: 70px;
     position: fixed;
     color: var(--text-color);
     max-width: 35%;
@@ -117,10 +118,14 @@ html.dark {
     align-items: center;
 }
 
+#track-cover {
+    max-height: 70px;
+    min-height: 70px;
+}
+
 .track-info {
     font-family: 'Montserrat';
     font-weight: 300;
-    /* margin-top: 5px; */
     display: flex;
     align-items: center;
 }
